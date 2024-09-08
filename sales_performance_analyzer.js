@@ -36,3 +36,23 @@ function findTopAndBottomPerformers(salespeople) {
 bottomPerformer: salesperson.totalSales < result.bottomPerformer.totalSales ? salesperson : result.bottomPerformer}),
  {topPerformer: salespeople[0], bottomPerformer: salespeople[0] });}
 
+ // Generates the performance report
+function generatePerformanceReport(salespeople) {
+// Compute average sales and performance ratings
+salespeople.forEach(person => {
+person.averageSales = calculateAverageSales(person.sales);
+person.performanceRating = determinePerformanceRating(person.averageSales);});
+
+// Find top and bottom performers
+const { topPerformer, bottomPerformer } = findTopAndBottomPerformers(salespeople);
+
+// Create the report
+const report = salespeople.map(person => ({
+name: person.name,
+averageSales: person.averageSales,
+performanceRating: person.performanceRating }));
+
+// Return the report and top/bottom performers
+return {report,
+topPerformer: topPerformer.name,
+bottomPerformer: bottomPerformer.name};}
