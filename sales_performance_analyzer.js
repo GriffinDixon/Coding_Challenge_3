@@ -17,3 +17,13 @@ console.log("Sum of sales:", sum);
 console.log("Average sales:", average);
     return average;}
 
+    //Task 2 Determine Performance Rating
+function determinePerformanceRating(averageSales) {
+if (averageSales > 10000) 
+    {return "Excellent"; } 
+else if (averageSales >= 7000 && averageSales <= 10000) {
+    return "Good";}
+else if (averageSales >= 4000 && averageSales < 7000) {
+    return "Satisfactory";}
+else {return "Needs Improvement";}}
+console.log("Performance Rating", determinePerformanceRating)
