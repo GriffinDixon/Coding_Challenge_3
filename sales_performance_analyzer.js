@@ -34,7 +34,7 @@ function findTopAndBottomPerformers(salespeople) {
     return salespeople.reduce((result, salesperson) => 
 ({topPerformer: salesperson.totalSales > result.topPerformer.totalSales ? salesperson : result.topPerformer,
 bottomPerformer: salesperson.totalSales < result.bottomPerformer.totalSales ? salesperson : result.bottomPerformer}),
- { topPerformer: salespeople[0], bottomPerformer: salespeople[0] });}
- console.log("Top Performer:",topPerformer);
- console.log("Bottom Performer:",bottomPerformer);
- 
+ {topPerformer: salespeople[0], bottomPerformer: salespeople[0] });}
+ const performers = findTopAndBottomPerformers(salespeople);
+console.log("Top Performer:", performers.topPerformer);
+console.log("Bottom Performer:", performers.bottomPerformer);
