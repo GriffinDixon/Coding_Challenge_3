@@ -13,3 +13,6 @@ sum += sales[i];}
 let average = sum / sales.length;
     return average;}
 
+console.log("Sales array:", sales);
+console.log("Sum of sales:", sum);
+console.log("Average sales", average);
